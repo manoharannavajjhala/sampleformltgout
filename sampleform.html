@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+        <div id="lightning-out"></div>
+        <script src="https://sivakrishnacloudbyz-dev-ed.my.site.com/sampleform/lightning/lightning.out.js"></script>
+
+        <div data-lightning-out="true"></div>
+        <script>
+            $Lightning.use(
+                'c:SampleFormWrapper', // name of the Lightning Out app
+                function () { // callback after the framework and app load
+                    $Lightning.createComponent(
+                        'c:sampleForm', // top-level component of the Lightning Out app
+                        {}, // attributes to set on the component
+                        'lightning-out', // DOM element ID where the component is inserted
+                        function (cmp) { // callback after the component loads
+                            console.log('The component was created.');
+                        }
+                    );
+                },
+                'https://sivakrishnacloudbyz-dev-ed.my.site.com/sampleform' // Experience Cloud site endpoint
+            );
+        </script>
+    </body>
+</html>
